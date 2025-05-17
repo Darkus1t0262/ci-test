@@ -1,4 +1,4 @@
-name: Say hello
+name: Say Hello
 
 on:
   push:
@@ -9,9 +9,14 @@ jobs:
   hello_world:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo the message
-        run: |
-          echo "Hola Josue Barrera!"
-      - name: Dime la fecha
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        
+      - name: Display a Welcome Message
+        run: echo "Hola Josue Barrera!"
+
+      - name: Show Current Date and Time
         run: date
-      - run: ls -l
+        
+      - name: List Directory Contents
+        run: ls -l
